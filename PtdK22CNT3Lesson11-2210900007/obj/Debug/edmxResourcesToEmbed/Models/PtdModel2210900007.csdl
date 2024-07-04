@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PtdK22CNT3Lesson11DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PtdCategory">
+    <Key>
+      <PropertyRef Name="PtdID" />
+    </Key>
+    <Property Name="PtdID" Type="Int32" Nullable="false" />
+    <Property Name="PtdCateName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtdStatus" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PtdProduct">
+    <Key>
+      <PropertyRef Name="Ptdid2210900007" />
+    </Key>
+    <Property Name="Ptdid2210900007" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PtdProName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PtdCty" Type="Int32" />
+    <Property Name="PtdPrice" Type="Double" />
+    <Property Name="PtdCateId" Type="Int32" />
+    <Property Name="PtdActive" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="PtdK22CNT3Lesson11DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PtdCategory" EntityType="Self.PtdCategory" />
+    <EntitySet Name="PtdProduct" EntityType="Self.PtdProduct" />
+  </EntityContainer>
+</Schema>

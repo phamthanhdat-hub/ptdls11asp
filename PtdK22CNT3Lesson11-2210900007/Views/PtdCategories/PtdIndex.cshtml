@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PtdK22CNT3Lesson11_2210900007.Models.PtdCategory>
+
+@{
+    ViewBag.Title = "Danh muc san pham";
+    Layout = "~/Views/Shared/_Ptd2210900007Layout.cshtml";
+}
+
+<h2>Danh muc san pham </h2>
+
+<p>
+    Html.ActionLink("Create New", "Create")
+</p>
+<a href ="/PtdCategories/Create" class="btn btn-primary my-3">Them moi</a>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdCateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdStatus)
+        </th>
+        <th> Chuc nang</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdCateName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdStatus)
+        @if (item.PtdStatus == true)
+        {
+            <span style="color:green">Hoat dong</span>
+        }
+        else
+        {
+            <span style="color:red">Khong hoat dong</span>
+        }
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.PtdID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PtdID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PtdID })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,35 @@
+﻿@model PtdK22CNT3Lesson11_2210900007.Models.PtdCategory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Ptd2210900007Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PtdCategory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdCateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdCateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PtdID }) |
+    @Html.ActionLink("Back to List", "PtdIndex")
+</p>

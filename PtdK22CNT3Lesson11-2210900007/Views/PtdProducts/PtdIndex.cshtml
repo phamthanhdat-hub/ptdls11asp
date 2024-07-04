@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PtdK22CNT3Lesson11_2210900007.Models.PtdProduct>
+
+@{
+    ViewBag.Title = "Danh sach san pham";
+    Layout = "~/Views/Shared/_Ptd2210900007Layout.cshtml";
+}
+
+<h2>Danh sach san pham</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ptdid2210900007)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdProName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdCty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdActive)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdCateId)
+        </th>
+        <th> Chuc nang</th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Ptdid2210900007)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdProName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdCty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdActive)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PtdCateId)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Ptdid2210900007 }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Ptdid2210900007 }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Ptdid2210900007 })
+    </td>
+</tr>
+}
+
+</table>
